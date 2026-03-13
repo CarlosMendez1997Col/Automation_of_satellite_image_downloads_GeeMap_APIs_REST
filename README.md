@@ -14,7 +14,6 @@ The project is organized as a collection of Google Colab-oriented notebooks rath
 | `1. Sentinel/Sentinel1_ASF_API.ipynb` | Sentinel-1 via ASF Search API | Authenticates with NASA Earthdata, uploads an AOI shapefile, searches Sentinel-1 GRD scenes, downloads data from ASF, converts `.tiff` outputs into GeoTIFF, applies a Lee speckle filter, preserves CRS, and creates a ZIP archive. |
 | `1. Sentinel/Sentinel1_GEE.ipynb` | `COPERNICUS/S1_GRD` in Google Earth Engine | Authenticates with Earth Engine, visualizes the AOI with geemap, filters Sentinel-1 imagery, applies a Gamma MAP speckle filter, clips scenes to the AOI, exports VV and VH GeoTIFF bands, and compresses the outputs for download. |
 | `2. CHIRPS/Automate_Download_Precipitation_CHIRPS.ipynb` | `UCSB-CHC/CHIRPS/V3/PENTAD` in Google Earth Engine | Draws or loads an AOI, filters CHIRPS precipitation imagery, previews recent scenes, exports precipitation rasters to GeoTIFF, and packages them as a ZIP file. |
-| `3. Modis/Modis.ipynb` | MODIS | Placeholder notebook. It is currently empty and does not yet implement a workflow. |
 
 ## Repository Structure
 
@@ -141,22 +140,3 @@ Expected output folders and archives created by the notebooks:
 - `Sentinel1_Exports_ZIP.zip`
 - `CHIRPS_Exports/`
 - `CHIRPS_Exports_ZIP.zip`
-
-These are generated during notebook execution and are not stored in the repository by default.
-
-## Current Limitations
-
-- The repository is notebook-first and does not yet provide reusable scripts, a CLI, or an environment file.
-- Some AOI paths, dataset filters, and dates are hard-coded and should be reviewed before reuse.
-- The Sentinel-1 GEE notebook assumes access to a specific Earth Engine asset for Cobija.
-- The MODIS notebook is currently empty.
-
-## Suggested Improvements
-
-Possible next steps for expanding the repository:
-
-- Add a complete MODIS workflow
-- Convert repeated logic into reusable Python scripts or functions
-- Provide a `requirements.txt` or `environment.yml`
-- Parameterize AOI, date range, output resolution, and dataset filters
-- Add examples for running outside Google Colab
